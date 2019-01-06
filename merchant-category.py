@@ -23,3 +23,7 @@ fig, ax = plt.subplots(1, 3, figsize=(16,6))
 train['feature_1'].value_counts().sort_index().plot(kind='bar', ax=ax[0], color='teal', title='feature_1');
 train['feature_2'].value_counts().sort_index().plot(kind='bar', ax=ax[1], color='brown', title='feature_2');
 train['feature_3'].value_counts().sort_index().plot(kind='bar', ax=ax[2], color='gold', title='feature_3')
+
+test['feature_1'] = test['feature_1'].astype('category')
+test['feature_2'] = test['feature_2'].astype('category')
+test['feature_3'] = test['feature_3'].astype('category')
