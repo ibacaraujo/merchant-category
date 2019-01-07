@@ -27,3 +27,5 @@ train['feature_3'].value_counts().sort_index().plot(kind='bar', ax=ax[2], color=
 test['feature_1'] = test['feature_1'].astype('category')
 test['feature_2'] = test['feature_2'].astype('category')
 test['feature_3'] = test['feature_3'].astype('category')
+
+test.loc[test['first_active_month'].isna(), 'first_active_month'] = test.loc[(test['feature_1'] == 5) & (test['feature_2'] == 2) & (test['feature_3'] == 1), 'first_active_month'].min()
