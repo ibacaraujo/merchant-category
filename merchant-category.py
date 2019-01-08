@@ -29,3 +29,8 @@ test['feature_2'] = test['feature_2'].astype('category')
 test['feature_3'] = test['feature_3'].astype('category')
 
 test.loc[test['first_active_month'].isna(), 'first_active_month'] = test.loc[(test['feature_1'] == 5) & (test['feature_2'] == 2) & (test['feature_3'] == 1), 'first_active_month'].min()
+
+plt.hist(train['target'])
+plt.title('Target distribution')
+
+print('There are {0} samples with target lower than -20.'.format(train.loc[train['target'] < -20].shape[0]))
