@@ -34,3 +34,6 @@ plt.hist(train['target'])
 plt.title('Target distribution')
 
 print('There are {0} samples with target lower than -20.'.format(train.loc[train['target'] < -20].shape[0]))
+
+historical_transactions = pd.read_csv('../input/historical_transactions.csv')
+history = pd.read_excel('../input/Data_Dictionary.xlsx', sheet_name='history')
