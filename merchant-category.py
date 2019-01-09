@@ -37,3 +37,6 @@ print('There are {0} samples with target lower than -20.'.format(train.loc[train
 
 historical_transactions = pd.read_csv('../input/historical_transactions.csv')
 history = pd.read_excel('../input/Data_Dictionary.xlsx', sheet_name='history')
+
+print(f'{historical_transactions.shape[0]} samples in data')
+historical_transactions.head()
